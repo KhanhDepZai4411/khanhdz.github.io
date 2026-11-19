@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(
+        180deg,
+        #10152f,
+        #242b55,
+        #454b79
+    );
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+.moon {
+    position: fixed;
+    top: 65px;
+    right: 12%;
+    font-size: 65px;
+    filter: drop-shadow(0 0 25px #fff2b8);
+    animation: float 4s ease-in-out infinite;
+}
+
+.cloud {
+    position: fixed;
+    font-size: 75px;
+    opacity: 0.35;
+    animation: cloudMove 25s linear infinite;
+    pointer-events: none;
+}
+
+.cloud1 {
+    top: 20%;
+    left: -100px;
+}
+
+.cloud2 {
+    top: 65%;
+    left: -150px;
+    animation-delay: 8s;
+    font-size: 100px;
+}
+
+.cloud3 {
+    top: 43%;
+    left: -120px;
+    animation-delay: 15s;
+    font-size: 60px;
+}
+
+@keyframes cloudMove {
+    from { transform: translateX(-150px); }
+    to { transform: translateX(120vw); }
+}
+
+@keyframes float {
+    50% { transform: translateY(-15px); }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    padding: 125px 15px 80px;
+}
+
+.small-title {
+    color: #c9c9ee;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 9vw, 70px);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px #b8baff;
+    animation: fadeIn 2s ease;
+}
+
+.intro {
+    color: #e0e2ff;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 480px;
+    margin: 0 auto 35px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.start-btn {
+    background: #e4dfff;
+    color: #34345c;
+    padding: 15px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    box-shadow: 0 0 25px #d8cfff55;
+}
+
+.start-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px #fff8;
+}
+
+.music-btn {
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #ffffff22;
+    color: white;
+    border: 1px solid #ffffff55;
+    backdrop-filter: blur(10px);
+}
+
+.music-btn:hover {
+    background: #ffffff44;
+}
+
+.story {
+    margin-top: 50px;
+    line-height: 2;
+    font-size: 18px;
+    color: #f0efff;
+}
+
+.story-line {
+    min-height: 35px;
+    margin-bottom: 12px;
+}
+
+.ending {
+    margin-top: 40px;
+    animation: fadeIn 2s ease;
+}
+
+.ending h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.ending p {
+    line-height: 1.8;
+}
+
+.heart {
+    font-size: 55px;
+    color: #ffd5e7;
+    animation: heartbeat 1.5s infinite;
+}
+
+.secret {
+    margin: 35px auto;
+    padding: 25px;
+    max-width: 480px;
+    border: 1px solid #ffffff33;
+    border-radius: 20px;
+    background: #ffffff0d;
+    color: #e5e4ff;
+    line-height: 1.9;
+}
+
+.date {
+    letter-spacing: 5px;
+    margin-top: 25px;
+    color: #d4d2ff;
+}
+
+.signature {
+    margin-top: 15px;
+    font-style: italic;
+    color: #f4d8ef;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    color: #aaaed0;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.2); }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding-top: 150px;
+    }
+
+    .moon {
+        font-size: 48px;
+        right: 8%;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+}
